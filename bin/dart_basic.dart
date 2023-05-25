@@ -1,3 +1,4 @@
+import 'book.dart';
 import 'cleric.dart';
 import 'hero.dart';
 import 'sword.dart';
