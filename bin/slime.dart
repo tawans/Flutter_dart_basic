@@ -14,6 +14,7 @@ class Slime {
   }
 }
 
+// SuperClass Slime 상속
 class PoisonSlime extends Slime {
   int poisonAttackCount = 5;
 
