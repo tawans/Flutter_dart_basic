@@ -1,11 +1,12 @@
 import 'intangible_asset.dart';
 
+// 특허권 (무형 자산 상속)
 class Patent extends IntangibleAsset {
-  String name;
   String description;
 
   Patent({
-    required this.name,
+    required super.name,
+    required super.type,
     required this.description,
   });
 }

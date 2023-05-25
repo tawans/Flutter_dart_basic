@@ -1,16 +1,14 @@
 import 'tangible_asset.dart';
 
+// 책 클래스 (유형 자산 상속)
 class Book extends TangibleAsset {
-  String name;
-  int price;
-  String color;
   String isbn;
 
-  Book(
-    super._weight, {
-    required this.name,
-    required this.price,
-    required this.color,
+  Book({
     required this.isbn,
+    required super.name,
+    required super.price,
+    required super.color,
+    required super.weight,
   });
 }

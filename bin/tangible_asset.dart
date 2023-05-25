@@ -1,10 +1,18 @@
 import 'asset.dart';
 import 'thing.dart';
 
-//유형 자상 추상 클래스
+// 유형 자상 추상 클래스 (자산 상속 및 Thing 인터페이스 채택)
 abstract class TangibleAsset extends Asset implements Thing {
+  int price;
+  String color;
   double _weight;
-  TangibleAsset(this._weight);
+
+  TangibleAsset({
+    required super.name,
+    required this.price,
+    required this.color,
+    required double weight,
+  }) : _weight = weight;
 
   @override
   double get weight => _weight;
