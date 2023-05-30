@@ -1,5 +1,4 @@
-import 'hero.dart';
-import 'wand.dart';
+import 'package:dart_basic/wand.dart';
 
 class Wizard {
   String name;

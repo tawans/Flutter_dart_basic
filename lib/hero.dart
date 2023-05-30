@@ -1,4 +1,4 @@
-import 'sword.dart';
+import 'package:dart_basic/sword.dart';
 
 class Hero {
   // field

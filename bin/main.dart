@@ -1,8 +1,8 @@
-import 'book.dart';
-import 'cleric.dart';
-import 'hero.dart';
-import 'sword.dart';
-import 'wizard.dart';
+import 'package:dart_basic/cleric.dart';
+
+import '../lib/hero.dart';
+import '../lib/sword.dart';
+import '../lib/wizard.dart';
 
 void main() {
   Hero hero = Hero(name: '슈퍼맨', hp: 100);

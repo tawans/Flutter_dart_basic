@@ -1,5 +1,4 @@
 import 'hero.dart';
-import 'sword.dart';
 
 class Slime {
   int hp = 50;
