@@ -8,9 +8,11 @@ abstract interface class Mechanic {}
 
 abstract interface class Repairable {}
 
+abstract interface class Healable {}
+
 class Tank extends Unit implements Mechanic {}
 
-class Scv extends Unit implements Mechanic, Bionic, Repairable {
+class Scv extends Unit implements Mechanic, Bionic, Repairable, Healable {
   void repair(Repairable repairable) {
     if (repairable is Barracks) {
       return;
