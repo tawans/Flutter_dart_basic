@@ -1,7 +1,15 @@
 import 'terran.dart';
 
-abstract interface class Sheild {}
+abstract interface class Shield {
+  void recoveryShield() {}
+}
 
-class Zealot implements Sheild, Bionic {}
+class Zealot implements Shield, Bionic {
+  @override
+  void recoveryShield() {}
+}
 
-class Dragun implements Sheild, Mechanic {}
+class Dragun implements Shield, Mechanic {
+  @override
+  void recoveryShield() {}
+}
