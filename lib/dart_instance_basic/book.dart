@@ -1,4 +1,4 @@
-class Book {
+class Book implements Comparable {
   String title;
   DateTime publishDate = DateTime.now();
   String comment;
@@ -31,6 +31,12 @@ class Book {
         title: title ?? this.title,
         publishDate: publishDate ?? this.publishDate,
         comment: comment ?? this.comment);
+  }
+
+  @override
+  int compareTo(other) {
+    // TODO: implement compareTo
+    throw UnimplementedError();
   }
 }
 
