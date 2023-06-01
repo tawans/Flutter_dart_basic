@@ -53,7 +53,7 @@ void main() {
   print(getString);
 
   // 다른 타입을 저장하려고 하면 컴파일 오류 발생
-  // strongBox.put(42);
+   //strongBox.put(42);
   // 컴파일 오류: 타입 불일치
 
   StrongBox<int> intBox = StrongBox<int>(KeyType.padlock);
@@ -65,8 +65,7 @@ void main() {
 
   StrongBox<String> strongBox = StrongBox<String>(KeyType.padlock);
 
-  // 인스턴스를 저장
-  strongBox.put('열쇠 사용');
+  strongBox.put('내용물 넣는거');
 
   // 열쇠의 사용 횟수에 도달하기 전까지 인스턴스를 얻음
   for (int i = 0; i < 1025; i++) {
