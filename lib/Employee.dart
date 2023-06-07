@@ -34,7 +34,7 @@ void main() {
 
   Department department = Department('총무부', leader);
 
-  String json = jsonEncode(department.toJson());
+  String json = jsonEncode(department);
 
   File('company.txt').writeAsStringSync(json);
 }
