@@ -1,20 +1,54 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void main() async {
-  final apiKey = 'a64533e7ece6c72731da47c9c8bc691f';
-  final language = 'ko-KR';
-  final page = '1';
+class Movie {
+  final String title;
+  final String releaseDate;
+  final String overview;
 
-  final url =
+  Movie({
+    required this.title,
+    required this.releaseDate,
+    required this.overview,
+  });
+
+  factory Movie.fromJson(Map<String, dynamic> json) {
+    return Movie(
+      title: json['title'],
+      releaseDate: json['release_date'],
+      overview: json['overview'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'release_date': releaseDate,
+      'overview': overview,
+    };
+  }
+}
+
+void main() async {
+  final String apiKey = 'a64533e7ece6c72731da47c9c8bc691f';
+  final String language = 'ko-KR';
+  final int page = 1;
+
+  final String apiUrl =
       'https://api.themoviedb.org/3/movie/upcoming?api_key=$apiKey&language=$language&page=$page';
 
-  try {
-    final response = await http.get(Uri.parse(url));
-    final data = jsonDecode(response.body);
+  final response = await http.get(Uri.parse(apiUrl));
 
-    print(jsonEncode(data));
-  } catch (e) {
-    print('오류가 발생했습니다: $e');
+  if (response.statusCode == 200) {
+    final Map<String, dynamic> data = json.decode(response.body);
+    final List<dynamic> results = data['results'];
+
+    List<Movie> movies =
+        results.map((movieJson) => Movie.fromJson(movieJson)).toList();
+
+    // JSON 형태로 출력
+    print(json.encode(movies));
+  } else {
+    print('Failed to fetch movie data: ${response.statusCode}');
   }
 }
