@@ -49,6 +49,6 @@ void main() async {
     // JSON 형태로 출력
     print(json.encode(movies));
   } else {
-    print('Failed to fetch movie data: ${response.statusCode}');
+    print('영화 정보를 가져오는데 실패하였습니다 : ${response.statusCode}');
   }
 }
